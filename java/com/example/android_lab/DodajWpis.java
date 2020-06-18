@@ -23,6 +23,7 @@ public class DodajWpis extends AppCompatActivity {
         ArrayAdapter gatunki = new ArrayAdapter(this, android.R.layout.simple_spinner_dropdown_item, new String[] {"Pies", "Kot", "Rybki"});
         Spinner gatunek = findViewById(R.id.gatunek);
         gatunek.setAdapter(gatunki);
+
         Bundle extras = getIntent().getExtras();
         try {
             if(extras.getSerializable("element") != null) {
@@ -55,7 +56,7 @@ public class DodajWpis extends AppCompatActivity {
         );
 
         Intent intencja = new Intent();
-        intencja.putExtra("wpis", zwierze);
+        intencja.putExtra("nowy", zwierze);
         setResult(RESULT_OK, intencja);
         finish();
     }
