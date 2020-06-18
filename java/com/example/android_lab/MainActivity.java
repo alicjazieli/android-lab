@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
                 this,
                 android.R.layout.simple_list_item_2,
                 db.lista(),
-                new String[] {"_id", "gatunek"},
+                new String[] {"_id", "gatunek", "opis"},
                 new int[] {android.R.id.text1,
                         android.R.id.text2},
 
@@ -60,6 +60,16 @@ public class MainActivity extends AppCompatActivity {
                 Intent intencja = new Intent(getApplicationContext(), DodajWpis.class);
                 intencja.putExtra("element", zwierz);
                 startActivityForResult(intencja, 2);
+            }
+        });
+        listView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+            @Override
+            public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
+                TextView name = view.findViewById(android.R.id.text1);
+                db.usun(name.getText().toString());
+                adapter.changeCursor(db.lista());
+                adapter.notifyDataSetChanged();
+                return true;
             }
         });
     }

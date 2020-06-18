@@ -20,7 +20,7 @@ public class DodajWpis extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dodaj_wpis);
 
-        ArrayAdapter gatunki = new ArrayAdapter(this, android.R.layout.simple_spinner_dropdown_item, new String[] {"Pies", "Kot", "Rybki"});
+        ArrayAdapter gatunki = new ArrayAdapter(this, android.R.layout.simple_spinner_dropdown_item, new String[] {"Pies", "Kot", "Rybki", "Jeż"});
         Spinner gatunek = findViewById(R.id.gatunek);
         gatunek.setAdapter(gatunki);
 

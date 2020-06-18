@@ -23,13 +23,12 @@ public class Animal implements Serializable {
 
     @Override
     public String toString() {
-        return "Animal{" +
-                "_id=" + _id +
-                ", gatunek='" + gatunek + '\'' +
-                ", kolor='" + kolor + '\'' +
+        return "Zwierze: [_id=" + _id +
+                ", gatunek=" + gatunek +
+                ", kolor=" + kolor +
                 ", wielkosc=" + wielkosc +
-                ", opis='" + opis + '\'' +
-                '}';
+                ", opis=" + opis +
+                "]";
     }
 
     public int get_id() {
