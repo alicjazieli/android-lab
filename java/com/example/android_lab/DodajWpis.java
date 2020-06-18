@@ -34,11 +34,11 @@ public class DodajWpis extends AppCompatActivity {
                 kolor.setText(zwierz.getKolor());
                 wielkosc.setText(Float.toString(zwierz.getWielkosc()));
                 opis.setText(zwierz.getOpis());
+
                 this.modyfi_id=zwierz.get_id();
             }
         } catch(Exception ex) {
-            this.modyfi_id=0;
-        }
+            this.modyfi_id=0;}
     }
 
     public void wyslij (View view)
@@ -54,6 +54,7 @@ public class DodajWpis extends AppCompatActivity {
                 Float.valueOf(wielkosc.getText().toString()),
                 opis.getText().toString()
         );
+        zwierze.set_id(this.modyfi_id);
 
         Intent intencja = new Intent();
         intencja.putExtra("nowy", zwierze);
